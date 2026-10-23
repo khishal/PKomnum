@@ -24,6 +24,8 @@ _ALLOWED_FUNCS = {
 }
 _ALLOWED_CONSTS = {"pi": math.pi, "e": math.e}
 
+DEFAULT_INPUT = {"rumus": "0", "a": "0", "b": "0", "e": "0", "N": "0"}
+
 
 def _eval_node(node, x):
     if isinstance(node, ast.Expression):
@@ -155,11 +157,11 @@ class AplikasiBiseksi:
 
         self.entries = {}
         fields = [
-            ("Fungsi f(x)", "rumus", "x^2 - 2*x - 3", 30),
-            ("Batas a", "a", "1", 12),
-            ("Batas b", "b", "3", 12),
-            ("Toleransi error", "e", "0.0001", 12),
-            ("Iterasi maksimum (N)", "N", "100", 12),
+            ("Fungsi f(x)", "rumus", DEFAULT_INPUT["rumus"], 30),
+            ("Batas a", "a", DEFAULT_INPUT["a"], 12),
+            ("Batas b", "b", DEFAULT_INPUT["b"], 12),
+            ("Toleransi error", "e", DEFAULT_INPUT["e"], 12),
+            ("Iterasi maksimum (N)", "N", DEFAULT_INPUT["N"], 12),
         ]
         for col, (label, key, default, width) in enumerate(fields):
             frame = tk.Frame(input_card, bg="white")
