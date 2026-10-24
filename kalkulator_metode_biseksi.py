@@ -253,11 +253,9 @@ class AplikasiBiseksi:
             messagebox.showerror("Terjadi Kesalahan", str(err))
 
     def reset(self):
-        defaults = {"rumus": "x^2 - 2*x - 3", "a": "1", "b": "3",
-                    "e": "0.0001", "N": "100"}
         for key, entry in self.entries.items():
             entry.delete(0, "end")
-            entry.insert(0, defaults[key])
+            entry.insert(0, DEFAULT_INPUT[key])
         for item in self.tree.get_children():
             self.tree.delete(item)
         self.result_label.config(
